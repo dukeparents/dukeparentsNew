@@ -422,36 +422,14 @@ document.addEventListener("keydown", function(e) {
       </button>
       <div class="accordion-body accordion-body-qa">
 
-        <!-- PDF 内嵌区（永久显示，无需密码） -->
-        <div class="qa-pdf-embeds">
-
-          <div class="pdf-embed-block">
-            <div class="pdf-embed-title">📘 ECEhandbook-2526</div>
-            <iframe src="ECEhandbook-2526.pdf" class="pdf-iframe" title="ECE专业手册"></iframe>
-            <div class="pdf-embed-actions">
-              <a href="ECEhandbook-2526.pdf" target="_blank">🔗 新窗口打开</a>
-              <a href="ECEhandbook-2526.pdf" download>⬇️ 下载</a>
-            </div>
-          </div>
-
-          <div class="pdf-embed-block">
-            <div class="pdf-embed-title">📘 CEEHandbook-2526</div>
-            <iframe src="CEEHandbook-2526.pdf" class="pdf-iframe" title="CEE专业手册"></iframe>
-            <div class="pdf-embed-actions">
-              <a href="CEEHandbook-2526.pdf" target="_blank">🔗 新窗口打开</a>
-              <a href="CEEHandbook-2526.pdf" download>⬇️ 下载</a>
-            </div>
-          </div>
-
-          <div class="pdf-embed-block">
-            <div class="pdf-embed-title">📘 MEhandbook-2526</div>
-            <iframe src="MEhandbook-2526.pdf" class="pdf-iframe" title="ME专业手册"></iframe>
-            <div class="pdf-embed-actions">
-              <a href="MEhandbook-2526.pdf" target="_blank">🔗 新窗口打开</a>
-              <a href="MEhandbook-2526.pdf" download>⬇️ 下载</a>
-            </div>
-          </div>
-
+        <!-- PDF 文件列表（永久显示，点击打开） -->
+        <div class="qa-pdf-list">
+          <div class="qa-pdf-title">📄 专业手册</div>
+          <ul>
+            <li><a href="ECEhandbook-2526.pdf" target="_blank">📎 ECEhandbook-2526</a></li>
+            <li><a href="CEEHandbook-2526.pdf" target="_blank">📎 CEEHandbook-2526</a></li>
+            <li><a href="MEhandbook-2526.pdf" target="_blank">📎 MEhandbook-2526</a></li>
+          </ul>
         </div>
 
         <!-- Q&A 内容 -->
@@ -798,47 +776,38 @@ document.addEventListener("keydown", function(e) {
     cursor: zoom-in;
   }
 
-  /* Q&A PDF 内嵌区 */
-  .qa-pdf-embeds {
+  /* Q&A PDF 文件列表 */
+  .qa-pdf-list {
     margin: 12px 0 20px;
-  }
-  .pdf-embed-block {
-    margin-bottom: 20px;
     border: 1px solid #ddd;
     border-radius: 8px;
     overflow: hidden;
   }
-  .pdf-embed-title {
+  .qa-pdf-title {
     background: #000080;
     color: #fff;
-    font-size: 15px;
+    font-size: 14px;
     font-weight: bold;
-    padding: 10px 16px;
+    padding: 8px 14px;
     letter-spacing: 0.05em;
   }
-  .pdf-iframe {
-    width: 100%;
-    height: 600px;
-    border: none;
+  .qa-pdf-list ul {
+    list-style: none;
+    margin: 0;
+    padding: 8px 0;
+    background: #f8f8ff;
+  }
+  .qa-pdf-list li a {
     display: block;
-    background: #fff;
-  }
-  .pdf-embed-actions {
-    background: #f4f4f4;
     padding: 8px 16px;
-    display: flex;
-    gap: 20px;
-  }
-  .pdf-embed-actions a {
-    font-size: 14px;
+    font-size: 15px;
     color: #000080;
     text-decoration: none;
+    transition: background 0.15s;
   }
-  .pdf-embed-actions a:hover {
+  .qa-pdf-list li a:hover {
+    background: #e8eaf6;
     text-decoration: underline;
-  }
-  @media (max-width: 600px) {
-    .pdf-iframe { height: 380px; }
   }
 
   /* Q&A 手风琴内容区 */
