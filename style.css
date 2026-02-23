@@ -1,11 +1,25 @@
+/* ⭐ 引入哥特体（用于英文 Duke）— 本地托管，避免 Google Fonts 被墙 */
+@font-face {
+    font-family: 'UnifrakturMaguntia';
+    src: url('fonts/UnifrakturMaguntia.woff2') format('woff2'),
+         url('fonts/UnifrakturMaguntia.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 /* ⭐ 引入隶书字体 */
 @font-face {
     font-family: SIMLI;
     src: url('fonts/SIMLI.woff2') format('woff2'),
          url('fonts/SIMLI.ttf') format('truetype');
     font-weight: normal;
-    font-style: normal;
+    font-style: normal
 }
+
+.lishu {
+  font-family: 'SIMLI', serif;
+}
+
 
 body {
     font-family: 宋体, sans-serif;
@@ -26,6 +40,12 @@ header {
 
     padding: 18px 0 14px;        /* ⭐ 上虚下实 */
     letter-spacing: 0.12em;     /* ⭐ 题签关键 */
+}
+
+/* ⭐ 哥特体：专用于英文 Duke */
+.gothic {
+    font-family: 'UnifrakturMaguntia', cursive;
+    letter-spacing: 0.05em;
 }
 
 /* 主标题（题名） */
